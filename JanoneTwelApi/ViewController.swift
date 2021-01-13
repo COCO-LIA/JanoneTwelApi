@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Alamofire
+import ProgressHUD
 
 class ViewController: UIViewController {
     
@@ -26,20 +28,40 @@ class ViewController: UIViewController {
         let resultUrl = URL(string: originalAddress)
         let request = URLRequest(url: resultUrl!)
         
-        //네트워킹1 URLSession
-        URLSession.shared.dataTask(with: request) { [self] (data, response, err) in
-            print("+++++++++++++", response)
-            if err != nil {
-                return print("--------err--------", err?.localizedDescription)
-            } else {
-                results = parseJsonData(sendData: data!)
+        //네트워킹2 A.F
+        AF.request(request).responseData { (data) in
+            if data.error != nil {
                 
-                //테이블뷰 새로고침
-                OperationQueue.main.addOperation {
-                    self.tableView.reloadData()
-                }
+                ProgressHUD.dismiss()
+                
+                return print("!!!err!!!", data.error?.localizedDescription)
+            } else {
+                self.results = self.parseJsonData(sendData: data.data!)
+            
+            OperationQueue.main.addOperation {
+                self.tableView.reloadData()
+                ProgressHUD.dismiss()
             }
-        }.resume()
+                ProgressHUD.animationType = .lineScaling
+                ProgressHUD.show()
+        }
+    }.resume()
+        
+        
+//        //네트워킹1 URLSession
+//        URLSession.shared.dataTask(with: request) { [self] (data, response, err) in
+//            print("+++++++++++++", response)
+//            if err != nil {
+//                return print("--------err--------", err?.localizedDescription)
+//            } else {
+//                results = parseJsonData(sendData: data!)
+//
+//                //테이블뷰 새로고침
+//                OperationQueue.main.addOperation {
+//                    self.tableView.reloadData()
+//                }
+//            }
+//        }.resume()
     }
     
     

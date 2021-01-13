@@ -1,0 +1,6 @@
+framework module Pods_JanoneTwelApi {
+  umbrella header "Pods-JanoneTwelApi-umbrella.h"
+
+  export *
+  module * { export * }
+}
