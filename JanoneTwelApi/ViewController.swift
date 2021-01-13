@@ -83,36 +83,56 @@ class ViewController: UIViewController {
 
     
     
-    //데이터 파싱 1
-    func parseJsonData(sendData: Data) -> [Result] {
-        results = [Result]()
+//    //데이터 파싱 1
+//    func parseJsonData(sendData: Data) -> [Result] {
+//        results = [Result]()
+//
+//        do {
+//            //웹에 있는 자료
+//            let jsonResult = try JSONSerialization.jsonObject(with: sendData, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String : AnyObject]
+//
+//            let jsonResults = jsonResult["results"] as! [AnyObject]
+//
+//            for jsonResult in jsonResults {
+//
+//                var result = Result()
+//                result.adult = jsonResult["adult"] as! Bool
+//                result.average = (jsonResult["vote_average"] as? NSNumber)!.floatValue
+//                result.overview = jsonResult["overview"] as! String
+//                result.title = jsonResult["title"] as! String
+//
+//                results.append(result)
+//            }
+//
+//
+//        } catch {
+//
+//            print("---------------", error)
+//
+//        }
+//
+//        return results
+//    }
+    
+    //데이터파싱 2
+    func parseJsonData(sendData:Data) -> [Result] {
+        self.results = [Result]()
+        
+        let decoder = JSONDecoder()
         
         do {
-            //웹에 있는 자료
-            let jsonResult = try JSONSerialization.jsonObject(with: sendData, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String : AnyObject]
-            
-            let jsonResults = jsonResult["results"] as! [AnyObject]
-            
-            for jsonResult in jsonResults {
-                
-                var result = Result()
-                result.adult = jsonResult["adult"] as! Bool
-                result.average = (jsonResult["vote_average"] as? NSNumber)!.floatValue
-                result.overview = jsonResult["overview"] as! String
-                result.title = jsonResult["title"] as! String
-                
-                results.append(result)
-            }
-            
+            let resultDataStore = try decoder.decode(ResultDataStore.self, from: sendData)
+            print("_=_=_=_=_=", resultDataStore.results)
+            results = resultDataStore.results
             
         } catch {
-            
-            print("---------------", error)
-            
+            print("!!!!!!!", error)
         }
         
         return results
     }
+    
+    
 }
 
 

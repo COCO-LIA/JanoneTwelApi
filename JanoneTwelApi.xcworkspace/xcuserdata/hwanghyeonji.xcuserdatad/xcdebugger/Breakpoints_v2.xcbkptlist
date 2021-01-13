@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "4F49A8E8-C8EB-4DE1-98C1-6D907828C7D2"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6702EAF6-82F2-4F5B-88FE-FB187F1ECBF8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JanoneTwelApi/Result.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "8"
+            endingLineNumber = "8"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "6702EAF6-82F2-4F5B-88FE-FB187F1ECBF8 - 492b1d7c69d7208c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JanoneTwelApi.Result.init(adult: Swift.Bool, title: Swift.String, overview: Swift.String, average: Swift.Float) -&gt; JanoneTwelApi.Result"
+                  moduleName = "JanoneTwelApi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hwanghyeonji/Desktop/ios/JanoneTwelApi/JanoneTwelApi/Result.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "10"
+                  endingLineNumber = "10"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  uuid = "6702EAF6-82F2-4F5B-88FE-FB187F1ECBF8 - e4c00c903b7bb86a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "JanoneTwelApi.Result.init() -&gt; JanoneTwelApi.Result"
+                  moduleName = "JanoneTwelApi"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hwanghyeonji/Desktop/ios/JanoneTwelApi/JanoneTwelApi/Result.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "37">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
