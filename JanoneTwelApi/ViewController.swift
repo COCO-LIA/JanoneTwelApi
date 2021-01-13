@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     let originalAddress = "https://api.themoviedb.org/3/movie/now_playing?api_key=b804ea7f3826d58a902a69a0e017708f&language=en-US&page=1"
+    
     var results = [Result]()
     
 
@@ -28,24 +29,41 @@ class ViewController: UIViewController {
         let resultUrl = URL(string: originalAddress)
         let request = URLRequest(url: resultUrl!)
         
-        //네트워킹2 A.F
-        AF.request(request).responseData { (data) in
+        //네트워킹 3 jSON
+        AF.request(request).responseJSON { (data) in
             if data.error != nil {
-                
                 ProgressHUD.dismiss()
-                
-                return print("!!!err!!!", data.error?.localizedDescription)
-            } else {
-                self.results = self.parseJsonData(sendData: data.data!)
+                return print("!!err!!", data.error?.localizedDescription as Any)
+            }
             
+            print(data.data)
+            self.results = self.parseJsonData(sendData: data.data!)
             OperationQueue.main.addOperation {
                 self.tableView.reloadData()
                 ProgressHUD.dismiss()
             }
-                ProgressHUD.animationType = .lineScaling
-                ProgressHUD.show()
-        }
-    }.resume()
+            print("=======", self.results)
+        }.resume()
+    }
+        
+//        //네트워킹2 A.F
+//        AF.request(request).responseData { (data) in
+//            if data.error != nil {
+//
+//                ProgressHUD.dismiss()
+//
+//                return print("!!!err!!!", data.error?.localizedDescription)
+//            } else {
+//                self.results = self.parseJsonData(sendData: data.data!)
+//
+//            OperationQueue.main.addOperation {
+//                self.tableView.reloadData()
+//                ProgressHUD.dismiss()
+//            }
+//                ProgressHUD.animationType = .lineScaling
+//                ProgressHUD.show()
+//        }
+//    }.resume()
         
         
 //        //네트워킹1 URLSession
@@ -62,7 +80,7 @@ class ViewController: UIViewController {
 //                }
 //            }
 //        }.resume()
-    }
+
     
     
     //데이터 파싱 1
