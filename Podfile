@@ -7,6 +7,7 @@ target 'JanoneTwelApi' do
 
 pod 'Alamofire'
 pod 'ProgressHUD'
+pod 'Kingfisher'
 
   # Pods for JanoneTwelApi
 

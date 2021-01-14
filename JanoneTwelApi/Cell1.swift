@@ -10,6 +10,7 @@ import UIKit
 class Cell1: UITableViewCell {
     
     @IBOutlet weak var imgView: UIImageView!
+    
     @IBOutlet weak var adultLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var averageLabel: UILabel!

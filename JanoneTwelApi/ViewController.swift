@@ -8,6 +8,8 @@
 import UIKit
 import Alamofire
 import ProgressHUD
+//4. 이미지 연동 (4-2) 1. 오픈소스를 활용한 이미지 캐싱. Podfile로 간다
+import Kingfisher
 
 class ViewController: UIViewController {
     
@@ -154,6 +156,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         cell1.averageLabel.text = "\(results[indexPath.row].average)"
         cell1.overviewLabel.text = results[indexPath.row].overview
         cell1.titleLabel.text = results[indexPath.row].title
+        
+        //4. 이미지 연동 (4-2) 2.
+        let imgUrl = URL(string: "https://image.tmdb.org/t/p/w500\(results[indexPath.row].poster)")
+        cell1.imageView?.kf.setImage(with: imgUrl)
         
         return cell1
     }

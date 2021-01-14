@@ -49,22 +49,22 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="adult" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OWB-QJ-gQv">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="adult" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OWB-QJ-gQv">
                                                     <rect key="frame" x="326" y="11" width="68" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ac2-1b-8Gr">
-                                                    <rect key="frame" x="96" y="11" width="222" height="128"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ac2-1b-8Gr">
+                                                    <rect key="frame" x="28" y="11" width="268" height="126"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="OWB-QJ-gQv" secondAttribute="trailing" constant="20" symbolic="YES" id="37C-xd-Cio"/>
-                                                <constraint firstAttribute="bottom" secondItem="OWB-QJ-gQv" secondAttribute="bottom" constant="284" id="Wxa-Gc-I9i"/>
-                                                <constraint firstItem="OWB-QJ-gQv" firstAttribute="leading" secondItem="gu5-3t-nDo" secondAttribute="leading" constant="326" id="lKQ-CR-Bw7"/>
-                                                <constraint firstItem="OWB-QJ-gQv" firstAttribute="top" secondItem="gu5-3t-nDo" secondAttribute="top" constant="11" id="pOd-U5-yeG"/>
+                                                <constraint firstItem="ac2-1b-8Gr" firstAttribute="top" secondItem="gu5-3t-nDo" secondAttribute="top" constant="11" id="JYy-4w-3fR"/>
+                                                <constraint firstItem="ac2-1b-8Gr" firstAttribute="leading" secondItem="gu5-3t-nDo" secondAttribute="leading" constant="28" id="bq5-kD-SVr"/>
+                                                <constraint firstAttribute="trailing" secondItem="ac2-1b-8Gr" secondAttribute="trailing" constant="118" id="f37-TI-bkX"/>
+                                                <constraint firstAttribute="bottom" secondItem="ac2-1b-8Gr" secondAttribute="bottom" constant="179" id="hCA-Bp-Z7Q"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

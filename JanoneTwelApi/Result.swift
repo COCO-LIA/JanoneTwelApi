@@ -14,27 +14,33 @@ import Foundation
 //    var average : Float = 0.0
 //}
 
-//데이터파싱 2 Codable 형식
+
 struct Result: Codable {
         var adult : Bool = false
         var title : String = ""
         var overview : String = ""
         var average : Float = 0.0
+    //4. 이미지 연동 (4-1)
+        var poster : String = ""
     
     enum CodingKeys: String, CodingKey {
         case adult
         case title
         case overview
         case average = "vote_average"
+    //4. 이미지 연동 (4-1)
+        case poster = "poster_path"
     }
     
-    //decode : Json 데이터를 decodable 자료형에 저장
+
     init(from decoder:Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         adult = try values.decode(Bool.self, forKey: .adult)
         title = try values.decode(String.self, forKey: .title)
         overview = try values.decode(String.self, forKey: .overview)
         average = try values.decode(Float.self, forKey: .average)
+    //4. 이미지 연동 (4-1)
+        poster = try values.decode(String.self, forKey: .poster)
     }
 }
 
